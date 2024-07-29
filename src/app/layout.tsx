@@ -40,8 +40,9 @@ export default function RootLayout({
             height={40}
             x={0}
             y={0}
+            z={-1}
             className={cn(
-              "[mask-image:radial-gradient(800px_circle_at_top,white,transparent)]"
+              "[mask-image:radial-gradient(800px_circle_at_top,white,transparent)] -z-10"
             )}
           />
         </ThemeProvider>
