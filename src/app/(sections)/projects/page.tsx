@@ -1,42 +1,75 @@
 "use client";
-import Image from "next/image";
+
+import { Badge } from "@/components/ui/badge";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const ProjectsData = [
   {
-    id: 1,
-    name: "syntaxUI",
-    description: "Ready-to-use UI elements designed for rapid development.",
-    link: "https://syntaxui.com",
-    image: "/next.svg",
+    id: 4,
+    name: "ZenBoard",
+    description: "Task management app based on kanban board.",
+    link: "#",
+    image: "/images/favicon-32x32.png",
+    badges: [
+      "React",
+      "TypeScript",
+      "Chakra UI",
+      "zustand",
+      "Tanstack Query",
+      "Tanstack Router",
+      "Firebase",
+      "Cypress",
+    ],
   },
   {
     id: 2,
-    name: "Prettyfolio",
-    description: "A curated collection of portfolios for inspiration.",
-    link: "https://prettyfolio.com",
-    image: "/next.svg",
+    name: "Gearwheel",
+    description: "A modern e-commerce admin panel.",
+    link: "#",
+    image: "/images/gearwheel-logo.svg",
+    badges: [
+      "React",
+      "TypeScript",
+      "TailwindCSS",
+      "shadcn/ui",
+      "zustand",
+      "Tanstack Query",
+      "React Router",
+      "REST API",
+    ],
   },
   {
     id: 5,
-    name: "Enchant",
-    description: "A vibrant theme for Visual Studio Code.",
-    link: "https://enchant.ansubkhan.com",
+    name: "Budgetify",
+    description: "A finance tracker app",
+    link: "#",
     image: "/next.svg",
+    badges: ["Next.js", "Material UI", "Supabase"],
   },
   {
     id: 3,
-    name: "Ansubkhan.com",
-    description: "My personal website, blogs and newsletter.",
-    link: "https://ansubkhan.com",
-    image: "/next.svg",
+    name: "Metamiejskie",
+    description:
+      "A web application that allows users to organize meetings, make bets, and complete quests.",
+    link: "#",
+    image: "/images/metamiejskie-logo.svg",
+    badges: [
+      "Next.js",
+      "TypeScript",
+      "Tanstack Query",
+      "TailwindCSS",
+      "shadcn/ui",
+    ],
   },
+
   {
-    id: 4,
-    name: "Quote Vault",
-    description: "Social media, but for sharing quotes.",
-    link: "https://quote-vault.vercel.app",
-    image: "/next.svg",
+    id: 6,
+    name: "rynkovskiUI",
+    description: "Ready-to-use UI elements.",
+    link: "#",
+    image: "/images/ui-logo.svg",
+    badges: ["Next.js", "TypeScript", "TailwindCSS"],
   },
 ];
 
@@ -48,7 +81,7 @@ function Index() {
         bounce: 0.7,
       }}
     >
-      <section id="projects">
+      <section id="projects" className="p-12">
         <div className="grid w-full grid-cols-2 gap-x-10 md:grid-cols-3">
           {ProjectsData.map((project) => {
             return (
@@ -61,19 +94,43 @@ function Index() {
                   bounce: 0.7,
                 }}
                 key={project.id}
-                className="mt-5 text-center flex items-center flex-col justify-center"
+                className="mt-5 text-center "
               >
                 <a
                   target="_blank"
                   rel="noopener noreferrer"
                   href={project.link}
+                  className="flex items-center flex-col justify-center gap-1"
                 >
-                  <div className="mb-1 text-sm font-medium text-gray-900 dark:text-gray-100">
+                  <div className="bg-gray-600/30 flex items-center justify-center rounded-full p-3 w-16 h-16 border border-gray-800">
+                    <Image
+                      src={project.image}
+                      alt={project.name}
+                      width={50}
+                      height={50}
+                    />
+                  </div>
+                  <div className="mb-1 mt-2 text-sm font-medium text-gray-900 dark:text-gray-100">
                     {project.name}
                   </div>
                   <div className="max-w-[250px] text-sm font-normal text-gray-500 dark:text-gray-500">
                     {project.description}
                   </div>
+
+                  {project.badges && (
+                    <div className="mt-1 flex flex-wrap items-center justify-center gap-1">
+                      {project.badges.map((badge) => {
+                        return (
+                          <Badge
+                            key={badge}
+                            className="text-xs font-medium bg-muted-foreground"
+                          >
+                            {badge}
+                          </Badge>
+                        );
+                      })}
+                    </div>
+                  )}
                 </a>
               </motion.div>
             );
