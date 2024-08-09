@@ -2,13 +2,13 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const tabs = [
   { name: "About me", href: "/" },
-  { name: "Projects", href: "/projects/" },
-  { name: "Gallery", href: "/gallery/" },
-  { name: "Contact", href: "/contact/" },
+  { name: "Projects", href: "/projects" },
+  { name: "Gallery", href: "/gallery" },
+  { name: "Contact", href: "/contact" },
 ];
 
 interface TabProps {
@@ -42,10 +42,14 @@ const Tab = ({ href, text, selected, setSelected }: TabProps) => {
 
 const ButtonShapeTabs = () => {
   const pathname = usePathname();
-  const [selected, setSelected] = useState<string>(pathname);
+  const [selected, setSelected] = useState<string>("");
+
+  useEffect(() => {
+    setSelected(pathname);
+  }, [pathname]);
 
   return (
-    <div className="mb-8 flex flex-wrap items-center justify-center gap-2 py-6">
+    <div className="flex flex-wrap items-center justify-center gap-2 py-4">
       {tabs.map((tab, index) => (
         <Link href={tab.href} key={tab.name}>
           <Tab
