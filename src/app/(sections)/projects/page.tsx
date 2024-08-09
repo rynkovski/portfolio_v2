@@ -44,7 +44,7 @@ const ProjectsData = [
     name: "Budgetify",
     description: "A finance tracker app",
     link: "#",
-    image: "/next.svg",
+    image: "/images/budgetify-logo.svg",
     badges: ["Next.js", "Material UI", "Supabase"],
   },
   {
@@ -100,9 +100,9 @@ function Index() {
                   target="_blank"
                   rel="noopener noreferrer"
                   href={project.link}
-                  className="flex items-center flex-col justify-center gap-1"
+                  className="flex flex-col items-center justify-center gap-1"
                 >
-                  <div className="bg-gray-600/30 flex items-center justify-center rounded-full p-3 w-16 h-16 border border-gray-800">
+                  <div className="flex items-center justify-center w-16 h-16 p-3 border border-gray-800 rounded-full bg-gray-600/30">
                     <Image
                       src={project.image}
                       alt={project.name}
@@ -110,7 +110,7 @@ function Index() {
                       height={50}
                     />
                   </div>
-                  <div className="mb-1 mt-2 text-sm font-medium text-gray-900 dark:text-gray-100">
+                  <div className="mt-2 mb-1 text-sm font-medium text-gray-900 dark:text-gray-100">
                     {project.name}
                   </div>
                   <div className="max-w-[250px] text-sm font-normal text-gray-500 dark:text-gray-500">
@@ -118,7 +118,7 @@ function Index() {
                   </div>
 
                   {project.badges && (
-                    <div className="mt-1 flex flex-wrap items-center justify-center gap-1">
+                    <div className="flex flex-wrap items-center justify-center gap-1 mt-1">
                       {project.badges.map((badge) => {
                         return (
                           <Badge
