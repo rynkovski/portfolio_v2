@@ -47,11 +47,11 @@ const pictures = [
 
 function Index() {
   return (
-    <section id="gallery">
+    <section id="gallery" className="p-12">
       <h1 className="text-3xl font-bold text-center">
         Few pics from my trips 🌍✨
       </h1>
-      <div className="grid  w-full grid-cols-1 my-8 gap-4 md:grid-cols-4">
+      <div className="grid w-full grid-cols-1 gap-8 my-8 md:grid-cols-4">
         {pictures.map((picture, idx) => (
           <Picture key={picture.id} {...picture} idx={idx} />
         ))}
@@ -93,14 +93,14 @@ const Picture = ({
       onHoverStart={() => setIsVisible(true)}
       onHoverEnd={() => setIsVisible(false)}
       className={clsx(
-        "relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 dark:bg-zinc-800"
+        "relative place-self-center aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 dark:bg-zinc-800"
       )}
     >
       <Image
         src={src}
         alt={alt}
         sizes="(min-width: 640px) 18rem, 11rem"
-        className="absolute inset-0 h-full w-full object-cover"
+        className="absolute inset-0 object-cover w-full h-full"
         width={640}
         height={640}
       />
@@ -110,7 +110,7 @@ const Picture = ({
             initial={{ opacity: 0 }}
             animate={{ opacity: 1, transition: { duration: 0.2 } }}
             exit={{ opacity: 0 }}
-            className="absolute inset-0 w-full bg-gradient-to-t from-black/75 via-black/0 flex items-end"
+            className="absolute inset-0 flex items-end w-full bg-gradient-to-t from-black/75 via-black/0"
           >
             <h3 className="px-3 py-2 font-mono text-xs font-bold">{title}</h3>
           </motion.div>
