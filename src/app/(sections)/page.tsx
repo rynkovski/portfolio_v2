@@ -31,8 +31,8 @@ const slugs = [
 ];
 export default function Index() {
   return (
-    <div className="flex flex-col items-center justify-center p-12 pb-8">
-      <section className="text-muted-foreground flex gap-2 flex-col">
+    <div className="flex flex-col items-center justify-center">
+      <section className="text-muted-foreground flex gap-2 flex-col mx-4">
         <p>
           Hey, I&apos;m Karol Rynkowski, a{" "}
           <span className="text-white">frontend developer </span> who loves

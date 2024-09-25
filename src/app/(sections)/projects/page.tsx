@@ -75,7 +75,7 @@ function Index() {
       }}
       className="flex flex-col items-center justify-center p-12 pb-8"
     >
-      <section id="projects" className="p-12">
+      <section id="projects">
         <div className="grid w-full grid-cols-2 gap-10 md:grid-cols-3">
           {ProjectsData.map((project) => {
             return (

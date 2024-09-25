@@ -77,28 +77,26 @@ const navigation: {
 };
 function Index() {
   return (
-    <div className="flex flex-col items-center justify-center p-12 pb-8">
-      <section id="contact">
-        <div className="w-full max-w-6xl px-4 py-12 mx-auto sm:px-6 lg:px-8">
-          <div className="flex justify-center gap-32 mt-5">
-            {navigation.social.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className="text-gray-600 hover:text-primary dark:hover:text-primary"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                <span className="sr-only">{item.name}</span>
-                {item.icon && (
-                  <item.icon className="w-20 h-20" aria-hidden="true" />
-                )}
-              </Link>
-            ))}
-          </div>
+    <section id="contact">
+      <div className="w-full max-w-6xl px-4 py-12 mx-auto sm:px-6 lg:px-8">
+        <div className="flex justify-center gap-32 mt-5">
+          {navigation.social.map((item) => (
+            <Link
+              key={item.name}
+              href={item.href}
+              className="text-gray-600 hover:text-primary dark:hover:text-primary"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <span className="sr-only">{item.name}</span>
+              {item.icon && (
+                <item.icon className="w-20 h-20" aria-hidden="true" />
+              )}
+            </Link>
+          ))}
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
   );
 }
 

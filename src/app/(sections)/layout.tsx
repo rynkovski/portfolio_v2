@@ -24,7 +24,6 @@ function Layout({ children }: { children: React.ReactNode }) {
       </header>
       <ButtonShapeTabs />
       <main>{children}</main>
-      <Footer />
     </div>
   );
 }

@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/components/theme-provider";
 import GridPattern from "@/components/magicui/grid-pattern";
 import "@/styles/globals.css";
+import Footer from "@/components/footer";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -34,6 +35,8 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           {children}
+          <Footer />
+
           <GridPattern
             width={40}
             height={40}
