@@ -27,6 +27,7 @@ const slugs = [
   "visualstudiocode",
   "adobephotoshop",
   "figma",
+  "playwright",
 ];
 export default function Index() {
   return (
