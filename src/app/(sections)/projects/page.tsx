@@ -42,7 +42,7 @@ const ProjectsData = [
     id: 2,
     name: "Gearwheel",
     description: "A modern e-commerce admin panel.",
-    link: "#",
+    link: "https://github.com/KITHProject/gearwheel-frontend/tree/develop_v1",
     image: "/images/gearwheel-logo.svg",
     badges: [
       "React",
