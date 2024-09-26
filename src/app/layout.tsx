@@ -5,6 +5,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import GridPattern from "@/components/magicui/grid-pattern";
 import "@/styles/globals.css";
 import Footer from "@/components/footer";
+import { Analytics } from "@vercel/analytics/react";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -36,7 +37,7 @@ export default function RootLayout({
         >
           {children}
           <Footer />
-
+          <Analytics />
           <GridPattern
             width={40}
             height={40}
