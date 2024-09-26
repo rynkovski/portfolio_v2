@@ -79,6 +79,9 @@ function Index() {
   return (
     <section id="contact">
       <div className="w-full max-w-6xl px-4 py-12 mx-auto sm:px-6 lg:px-8">
+        <h1 className="text-center text-xl font-semibold">
+          Let&apos;s team up and make cool stuff!
+        </h1>
         <div className="flex justify-center gap-32 mt-5">
           {navigation.social.map((item) => (
             <Link

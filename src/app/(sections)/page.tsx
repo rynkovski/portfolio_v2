@@ -49,8 +49,7 @@ export default function Index() {
         <p>
           If you&apos;re <span className="text-white">interested</span> in
           working together, I&apos;m <span className="text-white">ready</span>{" "}
-          to take on challenges and bring fresh ideas to the table. Let&apos;s
-          team up and make cool stuff!
+          to take on challenges and bring fresh ideas to the table.
         </p>
       </section>
       <section className="text-center">

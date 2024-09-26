@@ -19,6 +19,7 @@ const ProjectsData = [
       "Tanstack Query",
       "TailwindCSS",
       "shadcn/ui",
+      "Playwright",
     ],
   },
   {
@@ -61,6 +62,16 @@ const ProjectsData = [
     description: "Crypto game, walk to earn.",
     link: "https://umbra-virtunis.vercel.app/",
     image: "/images/umbra-virtunis-logo.png",
+    badges: ["Next.js", "TypeScript", "TailwindCSS"],
+    inProgress: true,
+  },
+  {
+    id: 7,
+    name: "Extend UI",
+    description:
+      "Collection of React components that can be used in any project that uses shadcn",
+    link: "https://extendui.vercel.app/",
+    image: "/images/code-xml.svg",
     badges: ["Next.js", "TypeScript", "TailwindCSS"],
     inProgress: true,
   },
