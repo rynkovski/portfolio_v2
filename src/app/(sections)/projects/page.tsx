@@ -111,8 +111,9 @@ function Index() {
                     <Image
                       src={project.image}
                       alt={project.name}
-                      width={500}
-                      height={500}
+                      width={1000}
+                      height={1000}
+                      className="w-12 h-12 p-1"
                     />
                   </div>
                   <div className="mt-2 mb-1 text-sm font-medium text-gray-900 dark:text-gray-100">
