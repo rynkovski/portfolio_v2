@@ -23,7 +23,7 @@ const Tab = ({ href, text, selected, setSelected }: TabProps) => {
       onClick={() => setSelected(href)}
       className={`${
         selected
-          ? "text-white"
+          ? "text-primary-foreground"
           : "text-gray-500 hover:text-gray-900 dark:hover:text-gray-100"
       } relative rounded-md px-2 py-1 text-sm font-medium transition-colors`}
     >

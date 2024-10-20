@@ -1,29 +1,20 @@
-"use client";
-
 import ButtonShapeTabs from "@/components/button-tabs";
-import Footer from "@/components/footer";
+import FadeUp from "@/components/fadeup";
+import Header from "@/components/header";
 import Image from "next/image";
 
 function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="min-h-screen max-w-5xl mx-auto">
-      <header className="p-8 flex gap-2 items-center justify-center text-center flex-col">
-        <Image
-          src="/images/photo.jpg"
-          alt="profile photo"
-          width={100}
-          height={100}
-          className="z-10 rounded-full"
-        />
-        <div className="flex items-center justify-center flex-col">
-          <h1 className="text-5xl font-bold pt-6 tracking-tighter z-10">
-            Karol Rynkowski
-          </h1>
-          <p className="text-lg text-muted-foreground">Software Developer</p>
-        </div>
-      </header>
-      <ButtonShapeTabs />
-      <main>{children}</main>
+    <div className="min-h-screen max-w-3xl mx-auto">
+      <FadeUp delay={0.2} duration={0.8}>
+        <Header />
+      </FadeUp>
+      <FadeUp delay={0.5} duration={0.8}>
+        <ButtonShapeTabs />
+      </FadeUp>
+      <FadeUp delay={0.8} duration={0.8}>
+        <main>{children}</main>
+      </FadeUp>
     </div>
   );
 }
