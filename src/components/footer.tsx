@@ -2,23 +2,27 @@ import Link from "next/link";
 import React from "react";
 import { Button } from "./ui/button";
 
-const Footer: React.FC = () => {
+function Footer() {
   return (
     <footer className="w-full">
-      <p className="my-6 text-center text-sm text-gray-600 dark:text-gray-100">
-        &copy; {new Date().getFullYear()}
+      <p className="my-6 text-center text-sm text-muted-foreground">
+        <span>&copy; {new Date().getFullYear()}</span>
         <Link
           href="https://github.com/rynkovski"
           rel="noopener noreferrer"
           target="_blank"
         >
-          <Button size={"sm"} variant={"link"}>
+          <Button
+            variant={"link"}
+            size={"sm"}
+            className="text-muted-foreground hover:text-primary px-2"
+          >
             rynkovski
           </Button>
         </Link>
       </p>
     </footer>
   );
-};
+}
 
 export default Footer;
