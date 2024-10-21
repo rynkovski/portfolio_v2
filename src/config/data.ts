@@ -34,7 +34,7 @@
       },
       {
         name:"Code",
-        href: "https://task-management-gamma-eight.vercel.app/",
+        href: "https://github.com/rynkovski/task-management",
       },
     ],
     image: "/images/zenboard.png",
