@@ -12,11 +12,11 @@ const socialLinks = [
     href: "https://github.com/rynkovski",
     icon: <Icons.gitHub className="fill-primary h-4 w-4" />,
   },
-  {
-    name: "LinkedIn",
-    href: "#",
-    icon: <Linkedin className="h-4 w-4 " />,
-  },
+  // {
+  //   name: "LinkedIn",
+  //   href: "",
+  //   icon: <Linkedin className="h-4 w-4 " />,
+  // },
   {
     name: "Twitter",
     href: "https://x.com/rynkovski",

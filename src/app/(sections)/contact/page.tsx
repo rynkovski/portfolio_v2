@@ -18,12 +18,12 @@ const contactLinks = [
     description: "Send me an email",
     icon: <Mail className="w-12 h-12" />,
   },
-  {
-    name: "LinkedIn",
-    href: "#",
-    description: "Connect with me on LinkedIn",
-    icon: <Linkedin className="w-12 h-12" />,
-  },
+  // {
+  //   name: "LinkedIn",
+  //   href: "/",
+  //   description: "Connect with me on LinkedIn",
+  //   icon: <Linkedin className="w-12 h-12" />,
+  // },
 ];
 
 function Index() {
@@ -46,7 +46,6 @@ function Index() {
               <Button asChild variant="outline" className="size-24">
                 <Link
                   href={link.href}
-                  className=""
                   rel="noopener noreferrer"
                   target="_blank"
                 >
