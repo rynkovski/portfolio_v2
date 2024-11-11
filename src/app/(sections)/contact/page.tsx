@@ -18,12 +18,12 @@ const contactLinks = [
     description: "Send me an email",
     icon: <Mail className="w-12 h-12" />,
   },
-  // {
-  //   name: "LinkedIn",
-  //   href: "/",
-  //   description: "Connect with me on LinkedIn",
-  //   icon: <Linkedin className="w-12 h-12" />,
-  // },
+  {
+    name: "LinkedIn",
+    href: "https://linkedin.com/in/karol-rynkowski",
+    description: "Connect with me on LinkedIn",
+    icon: <Linkedin className="w-12 h-12" />,
+  },
 ];
 
 function Index() {
