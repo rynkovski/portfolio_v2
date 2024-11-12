@@ -42,6 +42,10 @@ function Header() {
             Karol Rynkowski
           </h1>
           <p className="text-sm text-muted-foreground">Software Developer</p>
+          <div className="flex gap-x-1 items-center justify-center text-xs text-emerald-600 pt-1">
+            <span className="h-3 w-3 bg-emerald-500 border-2 border-emerald-600 rounded-full z-10  animate-pulse"></span>
+            <span>Available for work</span>
+            </div>
         </div>
       </div>
       <div className="flex items-center justify-center gap-2">
