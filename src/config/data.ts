@@ -97,7 +97,7 @@
       "Collection of React components that can be used in any project that uses shadcn",
      links: [{
         name:"Website",
-        href:  "https://extendui.vercel.app/",
+        href:  "https://extend-ui.com/",
       },
       {
         name:"Code",
