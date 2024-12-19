@@ -22,6 +22,7 @@
       "TailwindCSS",
       "shadcn/ui",
       "Playwright",
+      "REST API",
     ],
   },
   {
@@ -92,6 +93,21 @@
   },
   {
     id: 1,
+    name: "Quiz App",
+    description:
+      "A full-stack quiz application with a Next.js frontend and NestJS backend.",
+     links: [
+      {
+        name:"Code",
+        href: "https://github.com/rynkovski/quiz-app",
+      },
+    ],
+    image: "/images/quizapp.jpeg",
+    badges: ["Next.js", "NestJS", "TypeScript", "TailwindCSS", "Prisma", "Turborepo"],
+
+  },
+  {
+    id: 0,
     name: "Extend UI",
     description:
       "Collection of React components that can be used in any project that uses shadcn",

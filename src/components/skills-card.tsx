@@ -14,6 +14,9 @@ const skills = [
   { name: "Figma", icon: <Icons.figma color="#F24E1E" /> },
   { name: "ReactQuery", icon: <Icons.reactquery color="#FF4154" /> },
   { name: "Vite", icon: <Icons.vite color="#646CFF" /> },
+  {name: "Node.js", icon: <Icons.nodejs color="#3C873A" />},
+  {name: "Prisma", icon: <Icons.prisma color="#3C873A" />},
+  {name: "NestJS", icon: <Icons.nestjs color="#E0234E" />},
   { name: "Supabase", icon: <Icons.supabase color="#3FCF8E" /> },
   { name: "Firebase", icon: <Icons.firebase color="#DD2C00" /> },
   {

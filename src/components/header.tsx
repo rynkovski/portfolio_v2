@@ -4,7 +4,7 @@ import { Icons } from "./icons/icons";
 import Link from "next/link";
 import { Button } from "./ui/button";
 import { ModeToggle } from "./mode-toggle";
-import { Linkedin } from "lucide-react";
+import { Calendar, Linkedin } from "lucide-react";
 
 const socialLinks = [
   {
@@ -49,6 +49,8 @@ function Header() {
         </div>
       </div>
       <div className="flex items-center justify-center gap-2">
+        <Button asChild variant={"outline"}  className="text-xs text-primary "><Link   rel="noopener noreferrer"
+            target="_blank" href={"https://cal.com/rynkovski/60-min-meeting"}><Calendar className="h-4 w-4 sm:mr-1"/><span className="sr-only hidden sm:not-sr-only sm:block">Book a call</span></Link></Button>
         {socialLinks.map((link) => (
           <Link
             key={link.name}
