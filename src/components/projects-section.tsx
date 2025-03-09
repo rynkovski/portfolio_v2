@@ -61,7 +61,7 @@ function ProjectsSection() {
   return (
     <section id="projects" className="-mb-3 mt-16 sm:mt-32">
       <span className="font-medium mb-5 sm:mb-6">Projects</span>
-      <div className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2">
+      <div className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2 -mx-4">
         {PROJECTS.map((project) => (
           <ProjectItem key={project.name} {...project} />
         ))}
