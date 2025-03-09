@@ -6,8 +6,8 @@ function AboutSection() {
         Hey! I&apos;m Karol Rynkowski, a software developer who likes to build
         scalable web and mobile applications with a focus on performance and
         accessibility. When I&apos;m not coding, I love exploring new places
-        with my dog. Let&apos;s get in touch if you'd like to work on something
-        together!
+        with my dog. Let&apos;s get in touch if you&apos;d like to work on
+        something together!
       </p>
     </section>
   );
