@@ -41,6 +41,9 @@
     "tailwindcss": "^4.3.0",
     "typescript": "^6.0.3"
   },
+  "engines": {
+    "node": "24.x"
+  },
   "lint-staged": {
     "*.{js,ts,jsx,tsx,json,css}": "biome check --write --no-errors-on-unmatched"
   },
