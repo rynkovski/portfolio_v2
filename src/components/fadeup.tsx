@@ -1,5 +1,10 @@
 "use client";
-import { motion, useInView, useReducedMotion } from "framer-motion";
+import {
+  type Variants,
+  motion,
+  useInView,
+  useReducedMotion,
+} from "framer-motion";
 import type React from "react";
 import { useEffect, useRef, useState } from "react";
 
@@ -65,3 +70,20 @@ export function AnimatedFadeUp({
     </motion.div>
   );
 }
+
+export const fadeStaggerContainer: Variants = {
+  hidden: {},
+  show: {
+    transition: { staggerChildren: 0.08, delayChildren: 0.1 },
+  },
+};
+
+export const fadeStaggerItem: Variants = {
+  hidden: { opacity: 0, y: 8, filter: "blur(6px)" },
+  show: {
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)",
+    transition: { duration: 0.5, ease: [0.25, 0.1, 0.25, 1] },
+  },
+};

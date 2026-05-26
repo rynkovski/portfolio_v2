@@ -1,5 +1,7 @@
 "use client";
 
+import { fadeStaggerItem } from "@/components/fadeup";
+import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
 function getGdanskTime(): string {
@@ -41,13 +43,16 @@ export function LocalTime() {
   if (!mounted) return null;
 
   return (
-    <div className="mt-8 flex items-center gap-1.5 text-xs font-[460] leading-[1.2] tracking-[0.00063rem] text-muted-foreground">
+    <motion.div
+      variants={fadeStaggerItem}
+      className="mt-8 flex items-center gap-1.5 text-xs font-[460] leading-[1.2] tracking-[0.00063rem] text-muted-foreground"
+    >
       <span
         className={`size-2 rounded-full ${
           isDay ? "bg-green-500 animate-pulse" : "bg-muted-foreground/50"
         }`}
       />
       <span>{time} in Gdańsk, Poland</span>
-    </div>
+    </motion.div>
   );
 }
