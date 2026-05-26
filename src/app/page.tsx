@@ -1,24 +1,16 @@
-import AboutSection from "@/components/about-section";
-import BlogSection from "@/components/blog-section";
-import AnimatedFadeUp from "@/components/fadeup";
-import Header from "@/components/header";
-import ProjectsSection from "@/components/projects-section";
+import { AboutSection } from "@/components/about-section";
+import { AnimatedFadeUp } from "@/components/fadeup";
+import { Header } from "@/components/header";
+import { LocalTime } from "@/components/local-time";
 
 export default function Page() {
   return (
-    <div className="min-h-screen max-w-3xl mx-auto px-6 py-12">
-      <AnimatedFadeUp delay={0} duration={1}>
+    <main className="min-h-dvh max-w-xl mx-auto px-6 py-12">
+      <AnimatedFadeUp delay={0} duration={0.5}>
         <Header />
-      </AnimatedFadeUp>
-      <AnimatedFadeUp delay={0.2} duration={1}>
         <AboutSection />
+        <LocalTime />
       </AnimatedFadeUp>
-      <AnimatedFadeUp delay={0.6} duration={1}>
-        <ProjectsSection />
-      </AnimatedFadeUp>
-      <AnimatedFadeUp delay={0.4} duration={1}>
-        <BlogSection />
-      </AnimatedFadeUp>
-    </div>
+    </main>
   );
 }

@@ -1,9 +1,9 @@
+import { ThemeProvider } from "@/components/theme-provider";
+import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
 import { Inter as FontSans } from "next/font/google";
-import { cn } from "@/lib/utils";
-import { ThemeProvider } from "@/components/theme-provider";
 import "@/styles/globals.css";
-import Footer from "@/components/footer";
+import { ModeToggle } from "@/components/mode-toggle";
 import { Analytics } from "@vercel/analytics/react";
 
 const fontSans = FontSans({
@@ -28,12 +28,13 @@ export default function RootLayout({
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
-          enableSystem
+          enableSystem={false}
           disableTransitionOnChange
         >
+          <div className="fixed top-4 right-4 z-50">
+            <ModeToggle />
+          </div>
           {children}
-
-          <Footer />
           <Analytics />
         </ThemeProvider>
       </body>

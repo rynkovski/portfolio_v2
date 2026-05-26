@@ -1,6 +1,7 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, useReducedMotion } from "framer-motion";
+import type React from "react";
+import { useEffect, useRef, useState } from "react";
 
 type AnimationProps = {
   children: React.ReactNode;
@@ -12,7 +13,7 @@ type AnimationProps = {
   threshold?: number;
 };
 
-export default function AnimatedFadeUp({
+export function AnimatedFadeUp({
   children,
   delay = 0,
   duration = 0.5,
@@ -24,12 +25,17 @@ export default function AnimatedFadeUp({
   const ref = useRef(null);
   const isInView = useInView(ref, { once: triggerOnce, amount: threshold });
   const [isVisible, setIsVisible] = useState(false);
+  const prefersReducedMotion = useReducedMotion();
 
   useEffect(() => {
     if (isInView && !isVisible) {
       setIsVisible(true);
     }
   }, [isInView, isVisible]);
+
+  if (prefersReducedMotion) {
+    return <div ref={ref}>{children}</div>;
+  }
 
   return (
     <motion.div
@@ -51,8 +57,8 @@ export default function AnimatedFadeUp({
       transition={{
         duration,
         delay,
-        ease: [0.25, 0.1, 0.25, 1], // Smooth easing function
-        filter: { duration: duration * 0.8 }, // Blur effect duration slightly shorter
+        ease: [0.25, 0.1, 0.25, 1],
+        filter: { duration: duration * 0.8 },
       }}
     >
       {children}
