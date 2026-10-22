@@ -8,8 +8,11 @@ interface WorkListProps {
 export function WorkList({ items }: WorkListProps) {
   return (
     <ul className="flex flex-col gap-3 text-sm tracking-[-0.00563rem]">
-      {items.map(({ name, meta, href }) => (
-        <li key={name} className="flex items-baseline justify-between gap-4">
+      {items.map(({ name, meta, period, href }) => (
+        <li
+          key={name}
+          className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4"
+        >
           <span className="shrink-0 font-medium text-foreground">
             {href ? (
               <a
@@ -24,8 +27,14 @@ export function WorkList({ items }: WorkListProps) {
               name
             )}
           </span>
-          <span className="text-right font-[460] text-muted-foreground">
+          <span className="font-[460] text-muted-foreground sm:text-right">
             {meta}
+            {period && (
+              <span className="block whitespace-nowrap sm:inline">
+                <span className="hidden sm:inline"> · </span>
+                {period}
+              </span>
+            )}
           </span>
         </li>
       ))}
