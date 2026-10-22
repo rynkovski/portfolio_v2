@@ -31,6 +31,9 @@ export function ModeToggle() {
     root.style.setProperty("--y", `${y}px`);
 
     document.startViewTransition(() => {
+      root.classList.toggle("dark", newTheme === "dark");
+      root.classList.toggle("light", newTheme === "light");
+      root.style.colorScheme = newTheme;
       setTheme(newTheme);
     });
   };
