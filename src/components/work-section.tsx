@@ -22,30 +22,24 @@ export function WorkSection() {
       <div
         role="tablist"
         aria-label="Work"
-        className="flex items-center gap-2 pb-3 font-mono text-sm"
+        className="flex items-center gap-4 pb-4 text-sm font-medium tracking-[-0.00563rem]"
       >
-        {TABS.map((tab, index) => (
-          <span key={tab.id} className="flex items-center gap-2">
-            {index > 0 && (
-              <span aria-hidden className="text-muted-foreground/50">
-                /
-              </span>
+        {TABS.map((tab) => (
+          <button
+            key={tab.id}
+            type="button"
+            role="tab"
+            aria-selected={tab.id === activeTab.id}
+            onClick={() => setActiveId(tab.id)}
+            className={cn(
+              "cursor-pointer transition-colors",
+              tab.id === activeTab.id
+                ? "text-foreground"
+                : "text-muted-foreground hover:text-foreground",
             )}
-            <button
-              type="button"
-              role="tab"
-              aria-selected={tab.id === activeTab.id}
-              onClick={() => setActiveId(tab.id)}
-              className={cn(
-                "cursor-pointer transition-colors",
-                tab.id === activeTab.id
-                  ? "text-foreground"
-                  : "text-muted-foreground hover:text-foreground",
-              )}
-            >
-              {tab.label}
-            </button>
-          </span>
+          >
+            {tab.label}
+          </button>
         ))}
       </div>
       <AnimatePresence mode="wait" initial={false}>

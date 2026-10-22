@@ -1,42 +1,32 @@
+import { LINK_CLASS } from "@/lib/styles";
 import type { WorkItem } from "@/lib/work";
 
 interface WorkListProps {
   items: WorkItem[];
 }
 
-const rowClass =
-  "flex items-baseline justify-between gap-4 border-b border-border py-3 text-sm font-[460] tracking-[-0.00563rem]";
-
 export function WorkList({ items }: WorkListProps) {
   return (
-    <ul className="border-t border-border">
-      {items.map(({ name, meta, href }) => {
-        const content = (
-          <>
-            <span className="shrink-0 text-foreground">{name}</span>
-            <span className="text-right text-muted-foreground transition-colors group-hover:text-foreground">
-              {meta}
-            </span>
-          </>
-        );
-
-        return (
-          <li key={name}>
+    <ul className="flex flex-col gap-4 text-sm tracking-[-0.00563rem]">
+      {items.map(({ name, meta, href }) => (
+        <li key={name} className="flex flex-col gap-1">
+          <span className="font-medium text-foreground">
             {href ? (
               <a
                 href={href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`${rowClass} group`}
+                className={LINK_CLASS}
               >
-                {content}
+                {name}
               </a>
             ) : (
-              <div className={rowClass}>{content}</div>
+              name
             )}
-          </li>
-        );
-      })}
+          </span>
+          <span className="font-[460] text-muted-foreground">{meta}</span>
+        </li>
+      ))}
     </ul>
   );
 }

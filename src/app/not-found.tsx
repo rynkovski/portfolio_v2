@@ -1,3 +1,4 @@
+import { LINK_CLASS } from "@/lib/styles";
 import Link from "next/link";
 
 export default function NotFound() {
@@ -9,7 +10,7 @@ export default function NotFound() {
       </div>
       <Link
         href="/"
-        className="mt-6 inline-block text-sm font-[460] tracking-[-0.00563rem] text-foreground underline underline-offset-[3px] decoration-foreground/30 hover:decoration-foreground transition-colors"
+        className={`mt-6 inline-block text-sm font-[460] tracking-[-0.00563rem] text-foreground ${LINK_CLASS}`}
       >
         Back home
       </Link>
