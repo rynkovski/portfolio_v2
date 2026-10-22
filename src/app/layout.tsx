@@ -10,7 +10,7 @@ const fontSans = FontSans({
   subsets: ["latin"],
   variable: "--font-sans",
 });
-const SITE_URL = "https://karolrynkowski.vercel.app";
+const SITE_URL = "https://www.rynkovski.dev";
 const SITE_TITLE = "Karol Rynkowski";
 const SITE_DESCRIPTION = "My personal site to showcase my developer work.";
 
