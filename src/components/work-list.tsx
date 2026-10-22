@@ -7,10 +7,10 @@ interface WorkListProps {
 
 export function WorkList({ items }: WorkListProps) {
   return (
-    <ul className="flex flex-col gap-4 text-sm tracking-[-0.00563rem]">
+    <ul className="flex flex-col gap-3 text-sm tracking-[-0.00563rem]">
       {items.map(({ name, meta, href }) => (
-        <li key={name} className="flex flex-col gap-1">
-          <span className="font-medium text-foreground">
+        <li key={name} className="flex items-baseline justify-between gap-4">
+          <span className="shrink-0 font-medium text-foreground">
             {href ? (
               <a
                 href={href}
@@ -24,7 +24,9 @@ export function WorkList({ items }: WorkListProps) {
               name
             )}
           </span>
-          <span className="font-[460] text-muted-foreground">{meta}</span>
+          <span className="text-right font-[460] text-muted-foreground">
+            {meta}
+          </span>
         </li>
       ))}
     </ul>
