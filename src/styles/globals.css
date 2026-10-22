@@ -90,6 +90,21 @@
   }
 }
 
+@utility tab-fade {
+  animation: tab-fade 0.2s cubic-bezier(0.25, 0.1, 0.25, 1) both;
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
+}
+
+@keyframes tab-fade {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+}
+
 /* View Transition ripple effect */
 ::view-transition-old(root),
 ::view-transition-new(root) {

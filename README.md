@@ -1,3 +1,3 @@
 # Welcome to my portfolio Website 👋🏻
 
-Link: https://karolrynkowski.vercel.app
+Link: https://www.rynkovski.dev

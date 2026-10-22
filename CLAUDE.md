@@ -1,33 +1,4 @@
-## Commands
-
-- `bun dev` — start dev server (uses Turbopack)
-- `bun run build` — production build
-- `bun run lint` — run Biome check (lint + format)
-- `bun run lint:fix` — auto-fix lint and format issues
-- `bun run format` — format all files with Biome
-- `bun start` — serve production build
-
-Pre-commit hook runs Biome check on staged files via lint-staged/husky.
-
-## Tech Stack
-
-- **Next.js 16** (App Router, React 19, RSC enabled)
-- **Tailwind CSS v4** with `@tailwindcss/postcss`
-- **shadcn/ui** (new-york style, aliases: `@/components/ui`, `@/lib/utils`)
-- **next-themes** for dark/light mode (default: dark)
-- **Vercel Analytics** integrated in root layout
-- **Biome** (lint + format)
-- **bun** (package manager + runtime)
-
-## Architecture
-
-Single-page app — `src/app/page.tsx` (server component) composes Header, AboutSection and LocalTime. Staggered entrance is pure CSS: the `fade-up` utility in `globals.css` plus a per-element `[--i:N]` index for the delay (disabled under `prefers-reduced-motion`).
-
-- `src/app/` — root layout, page, not-found
-- `src/components/` — section components (header, about-section, local-time) plus theme provider and mode toggle
-- `src/components/ui/` — shadcn primitives (button)
-- `src/lib/utils.ts` — `cn()` helper (clsx + tailwind-merge)
-- `src/styles/globals.css` — theme tokens (OKLCH variables active via `@theme inline`)
+Use **bun** for everything (install, scripts, runtime).
 
 ## File & Code Limits
 
@@ -63,11 +34,6 @@ Single-page app — `src/app/page.tsx` (server component) composes Header, About
 - Absolute paths only: `@/components/...`, `@/lib/...`
 - No relative imports outside the same folder
 
-## Styling Notes
-
-- Colors use OKLCH CSS custom properties in `globals.css`, active via `@theme inline`
-- Dark mode via class strategy (`.dark` on `<html>`)
-
 ## Git
 
 - No `Co-Authored-By` line in commits
@@ -78,7 +44,6 @@ Single-page app — `src/app/page.tsx` (server component) composes Header, About
 - No `console.log` in committed code (use Biome `noConsoleLog` rule)
 - No commented-out code
 - No unused variables or imports (Biome enforces this)
-- Run `bun run lint:fix` before committing
 
 ## Brainstorming Preferences
 
