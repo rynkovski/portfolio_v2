@@ -4,6 +4,7 @@ import { AboutSection } from "@/components/about-section";
 import { fadeStaggerContainer } from "@/components/fadeup";
 import { Header } from "@/components/header";
 import { LocalTime } from "@/components/local-time";
+import { WorkSection } from "@/components/work-section";
 import { motion, useReducedMotion } from "framer-motion";
 
 export default function Page() {
@@ -18,6 +19,7 @@ export default function Page() {
     >
       <Header />
       <AboutSection />
+      <WorkSection />
       <LocalTime />
     </motion.main>
   );

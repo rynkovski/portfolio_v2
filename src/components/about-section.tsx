@@ -1,10 +1,8 @@
 "use client";
 
 import { fadeStaggerItem } from "@/components/fadeup";
+import { LINK_CLASS } from "@/lib/styles";
 import { motion } from "framer-motion";
-
-const linkClass =
-  "underline underline-offset-[3px] decoration-foreground/30 hover:decoration-foreground transition-colors";
 
 export function AboutSection() {
   return (
@@ -32,7 +30,7 @@ export function AboutSection() {
           href="https://github.com/rynkovski"
           target="_blank"
           rel="noopener noreferrer"
-          className={linkClass}
+          className={LINK_CLASS}
         >
           GitHub
         </a>
@@ -41,12 +39,12 @@ export function AboutSection() {
           href="https://linkedin.com/in/karol-rynkowski"
           target="_blank"
           rel="noopener noreferrer"
-          className={linkClass}
+          className={LINK_CLASS}
         >
           LinkedIn
         </a>
         , or reach me via{" "}
-        <a href="mailto:rynkowski.it@gmail.com" className={linkClass}>
+        <a href="mailto:rynkowski.it@gmail.com" className={LINK_CLASS}>
           email
         </a>
         .
@@ -57,7 +55,7 @@ export function AboutSection() {
           href="https://cal.com/rynkovski"
           target="_blank"
           rel="noopener noreferrer"
-          className={linkClass}
+          className={LINK_CLASS}
         >
           Book a call
         </a>

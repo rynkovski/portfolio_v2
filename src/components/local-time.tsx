@@ -4,7 +4,7 @@ import { fadeStaggerItem } from "@/components/fadeup";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
-function getGdanskTime(): string {
+function getLocalTime(): string {
   return new Intl.DateTimeFormat("en-GB", {
     timeZone: "Europe/Warsaw",
     hour: "2-digit",
@@ -31,10 +31,10 @@ export function LocalTime() {
 
   useEffect(() => {
     setMounted(true);
-    setTime(getGdanskTime());
+    setTime(getLocalTime());
     setIsDay(isDaytime());
     const interval = setInterval(() => {
-      setTime(getGdanskTime());
+      setTime(getLocalTime());
       setIsDay(isDaytime());
     }, 60_000);
     return () => clearInterval(interval);
