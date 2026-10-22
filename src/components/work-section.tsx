@@ -1,10 +1,8 @@
 "use client";
 
-import { fadeStaggerItem } from "@/components/fadeup";
 import { WorkList } from "@/components/work-list";
 import { cn } from "@/lib/utils";
 import { EXPERIENCE, PROJECTS } from "@/lib/work";
-import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { useState } from "react";
 
 const TABS = [
@@ -14,11 +12,10 @@ const TABS = [
 
 export function WorkSection() {
   const [activeId, setActiveId] = useState(TABS[0].id);
-  const prefersReducedMotion = useReducedMotion();
   const activeTab = TABS.find((tab) => tab.id === activeId) ?? TABS[0];
 
   return (
-    <motion.section id="work" variants={fadeStaggerItem} className="mt-12">
+    <section id="work" className="fade-up [--i:7] mt-12">
       <div
         role="tablist"
         aria-label="Work"
@@ -42,18 +39,9 @@ export function WorkSection() {
           </button>
         ))}
       </div>
-      <AnimatePresence mode="wait" initial={false}>
-        <motion.div
-          key={activeTab.id}
-          role="tabpanel"
-          initial={prefersReducedMotion ? false : { opacity: 0, y: 4 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={prefersReducedMotion ? undefined : { opacity: 0, y: -4 }}
-          transition={{ duration: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
-        >
-          <WorkList items={activeTab.items} />
-        </motion.div>
-      </AnimatePresence>
-    </motion.section>
+      <div key={activeTab.id} role="tabpanel" className="tab-fade">
+        <WorkList items={activeTab.items} />
+      </div>
+    </section>
   );
 }

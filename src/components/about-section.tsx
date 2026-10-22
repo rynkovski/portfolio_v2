@@ -1,8 +1,4 @@
-"use client";
-
-import { fadeStaggerItem } from "@/components/fadeup";
 import { LINK_CLASS } from "@/lib/styles";
-import { motion } from "framer-motion";
 
 export function AboutSection() {
   return (
@@ -10,21 +6,21 @@ export function AboutSection() {
       id="about"
       className="mt-6 flex flex-col gap-4 text-sm font-[460] leading-5 tracking-[-0.00563rem] text-foreground"
     >
-      <motion.p variants={fadeStaggerItem}>
+      <p className="fade-up [--i:2]">
         I&apos;m a product-focused software developer who loves shipping things
         from zero to one.
-      </motion.p>
-      <motion.p variants={fadeStaggerItem}>
+      </p>
+      <p className="fade-up [--i:3]">
         I&apos;ve built web and mobile products solo and with remote teams
         across time zones, from architecting mobile apps to co-creating an open
         source component library.
-      </motion.p>
-      <motion.p variants={fadeStaggerItem}>
+      </p>
+      <p className="fade-up [--i:4]">
         When I&apos;m not pushing pixels, I&apos;m probably traveling somewhere
         on the other side of the globe, hanging out with my dog, or hunting for
         the perfect cup of coffee.
-      </motion.p>
-      <motion.p variants={fadeStaggerItem}>
+      </p>
+      <p className="fade-up [--i:5]">
         You can find me on{" "}
         <a
           href="https://github.com/rynkovski"
@@ -48,8 +44,8 @@ export function AboutSection() {
           email
         </a>
         .
-      </motion.p>
-      <motion.p variants={fadeStaggerItem}>
+      </p>
+      <p className="fade-up [--i:6]">
         Want to chat?{" "}
         <a
           href="https://cal.com/rynkovski"
@@ -60,7 +56,7 @@ export function AboutSection() {
           Book a call
         </a>
         .
-      </motion.p>
+      </p>
     </section>
   );
 }

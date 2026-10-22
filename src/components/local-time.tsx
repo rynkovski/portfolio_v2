@@ -1,58 +1,54 @@
 "use client";
 
-import { fadeStaggerItem } from "@/components/fadeup";
-import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
-function getLocalTime(): string {
-  return new Intl.DateTimeFormat("en-GB", {
-    timeZone: "Europe/Warsaw",
-    hour: "2-digit",
-    minute: "2-digit",
-    hour12: false,
-  }).format(new Date());
+const TIME_FORMATTER = new Intl.DateTimeFormat("en-GB", {
+  timeZone: "Europe/Warsaw",
+  hour: "2-digit",
+  minute: "2-digit",
+  hourCycle: "h23",
+});
+
+interface LocalTimeState {
+  label: string;
+  isDay: boolean;
 }
 
-function isDaytime(): boolean {
-  const hour = Number.parseInt(
-    new Intl.DateTimeFormat("en-GB", {
-      timeZone: "Europe/Warsaw",
-      hour: "2-digit",
-      hour12: false,
-    }).format(new Date()),
-  );
-  return hour >= 6 && hour < 22;
+function getLocalTime(): LocalTimeState {
+  const parts = TIME_FORMATTER.formatToParts(new Date());
+  const hour = parts.find((part) => part.type === "hour")?.value ?? "00";
+  const minute = parts.find((part) => part.type === "minute")?.value ?? "00";
+  const hourNumber = Number.parseInt(hour, 10);
+  return {
+    label: `${hour}:${minute}`,
+    isDay: hourNumber >= 6 && hourNumber < 22,
+  };
 }
 
 export function LocalTime() {
-  const [time, setTime] = useState<string>("");
-  const [isDay, setIsDay] = useState(true);
-  const [mounted, setMounted] = useState(false);
+  const [time, setTime] = useState<LocalTimeState | null>(null);
 
   useEffect(() => {
-    setMounted(true);
-    setTime(getLocalTime());
-    setIsDay(isDaytime());
-    const interval = setInterval(() => {
+    let timeout: ReturnType<typeof setTimeout>;
+    const tick = () => {
       setTime(getLocalTime());
-      setIsDay(isDaytime());
-    }, 60_000);
-    return () => clearInterval(interval);
+      const msToNextMinute = 60_000 - (Date.now() % 60_000);
+      timeout = setTimeout(tick, msToNextMinute);
+    };
+    tick();
+    return () => clearTimeout(timeout);
   }, []);
 
-  if (!mounted) return null;
+  if (!time) return null;
 
   return (
-    <motion.div
-      variants={fadeStaggerItem}
-      className="mt-8 flex items-center gap-1.5 text-xs font-[460] leading-[1.2] tracking-[0.00063rem] text-muted-foreground"
-    >
+    <div className="fade-up [--i:8] mt-8 flex items-center gap-1.5 text-xs font-[460] leading-[1.2] tracking-[0.00063rem] text-muted-foreground">
       <span
         className={`size-2 rounded-full ${
-          isDay ? "bg-green-500 animate-pulse" : "bg-muted-foreground/50"
+          time.isDay ? "bg-green-500 animate-pulse" : "bg-muted-foreground/50"
         }`}
       />
-      <span>{time} in Gdańsk, Poland</span>
-    </motion.div>
+      <span>{time.label} in Gdańsk, Poland</span>
+    </div>
   );
 }
